@@ -1,4 +1,4 @@
-package kostyukevich.t;
+package parsers;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -9,12 +9,11 @@ import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class Main {
+public class csv_json_parser {
 
     public static void main(String[] args) {
         String[] columnMapping = {"id", "firstName", "lastName", "country", "age"};
@@ -23,7 +22,7 @@ public class Main {
         String json = listToJson(list);
         System.out.println(json);
     }
-private static String listToJson(List<Employee> list){
+public static String listToJson(List<Employee> list){
     GsonBuilder gsonBuilder = new GsonBuilder();
     Gson gson = gsonBuilder.create();
     Type listType = new TypeToken<List>() {}.getType();
