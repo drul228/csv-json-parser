@@ -8,10 +8,9 @@ import org.json.simple.parser.ParseException;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class json_parser {
+public class JsonParser {
     public static List<Employee> jsonToList(String json) {
         List <Employee> list = new ArrayList<>();
         try {

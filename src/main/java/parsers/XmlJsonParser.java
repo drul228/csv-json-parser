@@ -1,6 +1,5 @@
 package parsers;
 
-import org.json.simple.JSONObject;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -15,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class xml_json_parser {
+public class XmlJsonParser {
     public static void writeString (String json,String file) {
         try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
             bufferedWriter.write(json);
@@ -70,7 +69,7 @@ public class xml_json_parser {
     public static void main(String[] args) {
         File file = new File("data.xml");
         List<Employee> list = parseXML(file);
-        String jsonStr = csv_json_parser.listToJson(list);
+        String jsonStr = CsvJsonParser.listToJson(list);
         writeString(jsonStr,"data.json");
 
     }
